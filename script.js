@@ -32,3 +32,11 @@ document.getElementById('trip-form')?.addEventListener('submit',function(e){
   message.textContent='Thanks! Your enquiry is captured in this prototype. WhatsApp/email delivery will be connected next.';
   console.log(text);
 });
+
+document.getElementById('tawang-form')?.addEventListener('submit', function(e){
+  e.preventDefault();
+  const data = new FormData(this);
+  const msg = document.getElementById('tawang-message');
+  msg.textContent = 'Thanks! Your Tawang enquiry is captured in this prototype. WhatsApp/email delivery will be connected next.';
+  console.log('TAWANG ENQUIRY', Object.fromEntries(data.entries()));
+});
