@@ -246,3 +246,24 @@ footer{background:#12355B;color:white;padding:35px 5%;display:flex;justify-conte
   .ziro-page .ziro-hero-content h1{font-size:82px;}
   .ziro-page .ziro-intro-panel h2{font-size:48px;}
 }
+
+/* HIGH ROAD V8.2: Ziro mobile/tablet polish */
+.ziro-page .ziro-hero-v8 .btn.light{color:#12355B!important;background:#FFF!important;border:2px solid #12355B!important;opacity:1!important;visibility:visible!important;}
+@media(max-width:1400px){
+  .ziro-page .site-header{position:relative;z-index:50;}
+  .ziro-page .nav{display:none;position:absolute;top:72px;left:0;right:0;background:#FFF8ED;padding:18px 5% 22px;flex-direction:column;align-items:stretch;border-bottom:1px solid #eadfce;box-shadow:0 15px 30px #12355b12;}
+  .ziro-page .nav.open{display:flex;}
+  .ziro-page .nav a{padding:10px 0;}
+  .ziro-page .nav .nav-cta{padding:13px 18px;text-align:center;margin-top:4px;}
+  .ziro-page .menu-btn{display:block;}
+}
+@media(max-width:760px){
+  .ziro-page .site-header{padding:14px 5%;}
+  .ziro-page .brand strong{font-size:25px;}
+  .ziro-page .brand small{font-size:10px;}
+  .ziro-page .ziro-hero-v8{min-height:650px;}
+  .ziro-page .ziro-hero-content{padding:35px 20px 32px;}
+  .ziro-page .ziro-hero-content h1{font-size:82px;}
+  .ziro-page .ziro-intro-panel h2{font-size:48px;}
+  .ziro-page .ziro-hero-content .actions .btn{width:100%;}
+}
