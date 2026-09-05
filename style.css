@@ -205,3 +205,44 @@ footer{background:#12355B;color:white;padding:35px 5%;display:flex;justify-conte
 
 /* HIGH ROAD V8: Ziro page */
 .ziro-hero-v8{min-height:calc(100vh - 96px);position:relative;background-image:var(--hero);background-size:cover;background-position:center;display:flex;align-items:flex-end;overflow:hidden}.ziro-hero-content{position:relative;z-index:2;color:#fff;padding:clamp(34px,7vw,90px);max-width:900px}.ziro-hero-content h1{font-family:Oswald,sans-serif;font-size:clamp(5rem,16vw,12rem);line-height:.82;margin:18px 0}.ziro-hero-content .hero-kicker{font-size:clamp(1.25rem,3vw,2.2rem);font-weight:700;line-height:1.15}.ziro-intro{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0}.ziro-intro-image{min-height:620px;background-size:cover;background-position:center}.ziro-intro-panel{padding:clamp(34px,6vw,80px);align-self:center}.ziro-intro-panel h2{font-family:Oswald,sans-serif;font-size:clamp(3rem,6vw,5.8rem);line-height:.94;margin:18px 0 28px}.ziro-intro-panel p{font-size:1.05rem;line-height:1.75}.ziro-factbar{display:grid;grid-template-columns:repeat(3,1fr);background:#FFC857;color:#12355B}.ziro-factbar article{padding:30px;border-right:1px solid rgba(18,53,91,.25)}.ziro-factbar article:last-child{border-right:0}.ziro-factbar span,.ziro-factbar small{display:block}.ziro-factbar span{font-size:.75rem;letter-spacing:.16em;font-weight:800}.ziro-factbar strong{display:block;font-family:Oswald,sans-serif;font-size:2rem;margin:8px 0}.ziro-factbar small{opacity:.8}.ziro-places .v5-place-card{background-image:var(--card);background-size:cover;background-position:center}.ziro-route{background:#12355B;color:#FFF8ED;padding:90px 0}.ziro-plan{background:#FFF8ED}.ziro-enquire-box{border:2px solid #12355B;border-radius:28px;padding:28px;display:flex;align-items:center;justify-content:space-between;gap:24px}.ziro-enquire-box strong{font-family:Oswald,sans-serif;font-size:2.4rem}.ziro-enquire-box p{margin:8px 0 0}.v8-tall{min-height:620px}@media(max-width:900px){.ziro-hero-v8{min-height:calc(100vh - 90px);}.ziro-hero-content{padding:28px 22px 36px}.ziro-intro{grid-template-columns:1fr}.ziro-intro-image{min-height:420px}.ziro-factbar{grid-template-columns:1fr}.ziro-factbar article{border-right:0;border-bottom:1px solid rgba(18,53,91,.25)}.ziro-factbar article:last-child{border-bottom:0}.ziro-enquire-box{display:block}.ziro-enquire-box .btn{margin-top:22px;width:100%;text-align:center}.ziro-hero-content .actions{display:flex;flex-direction:column}.ziro-hero-content .actions .btn{width:100%;text-align:center}}
+
+
+/* HIGH ROAD V8.1: Ziro mobile repair */
+.ziro-hero-v8 .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,53,91,.86),rgba(18,53,91,.28)),linear-gradient(0deg,rgba(0,0,0,.52),transparent 60%);z-index:1}
+.ziro-hero-v8 .actions{position:relative;z-index:3}
+@media (max-width:1100px){
+  .ziro-page .site-header{padding:14px 5%;}
+  .ziro-page .nav{display:none;position:absolute;top:72px;left:0;right:0;background:#FFF8ED;padding:18px 5% 22px;flex-direction:column;align-items:stretch;border-bottom:1px solid #eadfce;box-shadow:0 15px 30px #12355b12;}
+  .ziro-page .nav.open{display:flex;}
+  .ziro-page .nav a{padding:10px 0;}
+  .ziro-page .nav .nav-cta{padding:13px 18px;text-align:center;margin-top:4px;}
+  .ziro-page .menu-btn{display:block;}
+  .ziro-page .brand strong{font-size:25px;}
+  .ziro-page .ziro-hero-v8{min-height:calc(100vh - 82px);}
+  .ziro-page .ziro-hero-content{padding:40px 6% 55px;}
+  .ziro-page .ziro-hero-content h1{font-size:clamp(78px,18vw,120px);}
+  .ziro-page .ziro-hero-content .hero-kicker{font-size:clamp(25px,5vw,36px);}
+  .ziro-page .ziro-hero-content .actions{display:flex;flex-direction:column;gap:10px;}
+  .ziro-page .ziro-hero-content .actions .btn{width:100%;text-align:center;}
+  .ziro-page .ziro-intro{grid-template-columns:1fr;}
+  .ziro-page .ziro-intro-image{min-height:390px;order:-1;}
+  .ziro-page .ziro-intro-panel{padding:55px 6%;}
+  .ziro-page .ziro-factbar{grid-template-columns:1fr;}
+  .ziro-page .ziro-factbar article{border-right:0;border-bottom:1px solid rgba(18,53,91,.25);padding:25px 6%;}
+  .ziro-page .ziro-factbar article:last-child{border-bottom:0;}
+  .ziro-page .v5-places{grid-template-columns:1fr;}
+  .ziro-page .v5-place-card,.ziro-page .v5-place-card.small{min-height:330px;}
+  .ziro-page .v6-package-grid{grid-template-columns:1fr;}
+  .ziro-page .v5-season,.ziro-page .v5-safety-grid{grid-template-columns:1fr;}
+  .ziro-page .ziro-enquire-box{display:block;}
+  .ziro-page .ziro-enquire-box .btn{width:100%;margin-top:20px;}
+  .ziro-page footer{flex-direction:column;}
+}
+@media (max-width:430px){
+  .ziro-page .brand strong{font-size:24px;}
+  .ziro-page .brand small{font-size:10px;}
+  .ziro-page .ziro-hero-v8{min-height:650px;}
+  .ziro-page .ziro-hero-content{padding:35px 20px 32px;}
+  .ziro-page .ziro-hero-content h1{font-size:82px;}
+  .ziro-page .ziro-intro-panel h2{font-size:48px;}
+}
