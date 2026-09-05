@@ -45,7 +45,7 @@ document.getElementById('tawang-form')?.addEventListener('submit', function(e){
 /* HIGH ROAD V5 TAWANG FORM
    Replace the value below with the HIGH ROAD business WhatsApp number,
    including country code, without + or spaces. Example: 919876543210 */
-const HIGH_ROAD_WHATSAPP = "";
+const HIGH_ROAD_WHATSAPP = '919707635538';
 
 function buildTawangWhatsAppMessage(form){
   const data = new FormData(form);
@@ -86,3 +86,29 @@ document.querySelectorAll('[data-trip]').forEach(function(button){
     if(message) message.value = `I'm interested in: ${button.dataset.trip}`;
   });
 });
+
+
+// HIGH ROAD V7: WhatsApp enquiries
+(function () {
+  function openWhatsApp(trip) {
+    const message = [
+      "Hi HIGH ROAD, I'm interested in a Tawang trip.",
+      "",
+      "Trip: " + trip,
+      "Travel date: ",
+      "Number of travellers: ",
+      "Vehicle preference: ",
+      "Message: "
+    ].join("\n");
+
+    const url = "https://wa.me/" + HIGH_ROAD_WHATSAPP + "?text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
+  }
+
+  document.querySelectorAll("[data-trip]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      const trip = button.getAttribute("data-trip") || "Tawang Trip";
+      openWhatsApp(trip);
+    });
+  });
+})();
