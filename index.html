@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HIGH ROAD | Tours · Custom Trips · Rentals</title>
+  <meta name="description" content="Explore Northeast India with HIGH ROAD. Tours, custom trips and vehicle rentals." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="HIGH ROAD home">
+      <span class="brand-mark">⌁</span>
+      <span>
+        <strong>HIGH ROAD</strong>
+        <small>Tours · Custom Trips · Rentals</small>
+      </span>
+    </a>
+    <button class="menu-btn" aria-label="Open menu">☰</button>
+    <nav class="nav">
+      <a href="#destinations">Destinations</a>
+      <a href="#tours">Tours</a>
+      <a href="#plan">Plan Your Trip</a>
+      <a href="#rentals">Rentals</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#contact">ENQUIRE NOW</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">NORTHEAST INDIA</p>
+        <h1>GO SOMEWHERE<br><span>WORTH REMEMBERING.</span></h1>
+        <p class="hero-text">Explore the mountains, valleys, roads and hidden corners of Northeast India.</p>
+        <div class="actions">
+          <a class="btn orange" href="#tours">EXPLORE TOURS →</a>
+          <a class="btn light" href="#plan">PLAN YOUR TRIP →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="destinations" class="section">
+      <div class="section-heading">
+        <div><p class="eyebrow orange-text">EXPLORE</p><h2>PLACES WORTH THE JOURNEY</h2></div>
+        <p>From high mountains to living cultures, from winding roads to warm people.</p>
+      </div>
+      <div class="destination-grid">
+        <a class="destination" href="#contact"><div class="photo tawang"></div><h3>TAWANG</h3><p>Mountains · Monasteries · Adventure</p></a>
+        <a class="destination" href="#contact"><div class="photo ziro"></div><h3>ZIRO</h3><p>Valleys · Culture · Nature</p></a>
+        <a class="destination" href="#contact"><div class="photo mechuka"></div><h3>MECHUKA</h3><p>Mountains · Villages · Road Trips</p></a>
+        <a class="destination" href="#contact"><div class="photo anini"></div><h3>ANINI</h3><p>Wild · Remote · Unforgettable</p></a>
+        <a class="destination" href="#contact"><div class="photo dong"></div><h3>DONG</h3><p>Sunrise · Mountains · Adventure</p></a>
+        <a class="destination" href="#contact"><div class="photo bomdila"></div><h3>BOMDILA</h3><p>Highlands · Monasteries · Views</p></a>
+        <a class="destination" href="#contact"><div class="photo shillong"></div><h3>SHILLONG</h3><p>Waterfalls · Music · Culture</p></a>
+      </div>
+    </section>
+
+    <section class="service-grid">
+      <article class="service blue"><div class="icon">🎒</div><h2>TOURS</h2><p>Ready-made journeys to some of Northeast India's most remarkable destinations.</p><a href="#tours">EXPLORE TOURS →</a></article>
+      <article class="service yellow"><div class="icon">🗺️</div><h2>CUSTOM TRIPS</h2><p>Have your own idea? Tell us what you want and we'll help turn it into a journey.</p><a href="#plan">PLAN YOUR TRIP →</a></article>
+      <article class="service orange"><div class="icon">🚗</div><h2>RENT A RIDE</h2><p>Self-drive cars, bikes and cars with drivers. Get the right ride for your journey.</p><a href="#rentals">EXPLORE RENTALS →</a></article>
+    </section>
+
+    <section id="tours" class="section">
+      <div class="section-heading">
+        <div><p class="eyebrow orange-text">START HERE</p><h2>FEATURED TOURS</h2></div>
+      </div>
+      <div class="tour-grid">
+        <article class="tour"><div class="tour-photo tawang"></div><div class="tour-body"><h3>Tawang Explorer</h3><p>6 Days / 5 Nights</p><strong>Price on enquiry</strong><a href="#contact">VIEW TOUR →</a></div></article>
+        <article class="tour"><div class="tour-photo ziro"></div><div class="tour-body"><h3>Ziro Escape</h3><p>4 Days / 3 Nights</p><strong>Price on enquiry</strong><a href="#contact">VIEW TOUR →</a></div></article>
+        <article class="tour"><div class="tour-photo mechuka"></div><div class="tour-body"><h3>Mechuka Journey</h3><p>7 Days / 6 Nights</p><strong>Price on enquiry</strong><a href="#contact">VIEW TOUR →</a></div></article>
+      </div>
+    </section>
+
+    <section id="plan" class="plan">
+      <div>
+        <p class="eyebrow">CUSTOM TRIPS</p>
+        <h2>TELL US WHERE YOU WANT TO GO.</h2>
+        <p>Not sure how to build the trip? That's okay. Send us your dates, group size, destination and travel style. We'll help shape the journey.</p>
+      </div>
+      <form id="trip-form" class="form">
+        <input required name="name" placeholder="Your name" />
+        <input required name="phone" placeholder="Phone / WhatsApp" />
+        <select name="destination"><option value="">Destination</option><option>Tawang</option><option>Ziro</option><option>Mechuka</option><option>Anini</option><option>Dong</option><option>Bomdila</option><option>Shillong</option><option>Not sure</option></select>
+        <input type="date" name="date" />
+        <input type="number" min="1" name="travellers" placeholder="Travellers" />
+        <select name="style"><option value="">Travel style</option><option>Adventure</option><option>Family</option><option>Couple</option><option>Nature</option><option>Culture</option><option>Road trip</option></select>
+        <textarea name="message" placeholder="Tell us anything else..."></textarea>
+        <button class="btn orange" type="submit">SEND ENQUIRY →</button>
+        <p id="form-message" class="form-message"></p>
+      </form>
+    </section>
+
+    <section id="rentals" class="section">
+      <div class="section-heading"><div><p class="eyebrow orange-text">RENT A RIDE</p><h2>CHOOSE YOUR WAY TO TRAVEL.</h2></div></div>
+      <div class="rental-grid">
+        <article><span>🚗</span><h3>SELF-DRIVE CARS</h3><p>Choose a car and take the road your way.</p><a href="#contact">ENQUIRE →</a></article>
+        <article><span>🏍️</span><h3>BIKES</h3><p>Two wheels for mountain roads and open journeys.</p><a href="#contact">ENQUIRE →</a></article>
+        <article><span>👨‍✈️</span><h3>CARS WITH DRIVER</h3><p>Relax and let an experienced driver handle the road.</p><a href="#contact">ENQUIRE →</a></article>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <p class="eyebrow">WHY HIGH ROAD?</p>
+      <h2>THE JOURNEY MATTERS TOO.</h2>
+      <div class="about-points">
+        <div><strong>LOCAL KNOWLEDGE</strong><p>Routes, places and experiences that help you travel better.</p></div>
+        <div><strong>FLEXIBLE JOURNEYS</strong><p>Your trip doesn't have to fit a template.</p></div>
+        <div><strong>SIMPLE BOOKING</strong><p>Tell us what you need. We'll help with the rest.</p></div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta">
+      <p class="eyebrow">READY FOR THE ROAD?</p>
+      <h2>WHERE WILL YOU GO NEXT?</h2>
+      <p>Choose a destination, choose a trip, or tell us what you have in mind.</p>
+      <a class="btn orange" href="mailto:hello@highroad.example?subject=HIGH%20ROAD%20Enquiry">ENQUIRE WITH HIGH ROAD →</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand"><strong>HIGH ROAD</strong><span>Tours · Custom Trips · Rentals</span></div>
+    <div>Exploring Northeast India, one journey at a time.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
