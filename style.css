@@ -301,3 +301,5 @@ footer{background:#12355B;color:white;padding:35px 5%;display:flex;justify-conte
 @media(max-width:760px){
   .ziro-page .ziro-hero-v8 .actions .ziro-all-destinations{width:100% !important;}
 }
+
+/* V8.4: destination button is also styled inline in ziro.html to defeat stale CSS/cache issues. */
