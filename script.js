@@ -40,3 +40,49 @@ document.getElementById('tawang-form')?.addEventListener('submit', function(e){
   msg.textContent = 'Thanks! Your Tawang enquiry is captured in this prototype. WhatsApp/email delivery will be connected next.';
   console.log('TAWANG ENQUIRY', Object.fromEntries(data.entries()));
 });
+
+
+/* HIGH ROAD V5 TAWANG FORM
+   Replace the value below with the HIGH ROAD business WhatsApp number,
+   including country code, without + or spaces. Example: 919876543210 */
+const HIGH_ROAD_WHATSAPP = "";
+
+function buildTawangWhatsAppMessage(form){
+  const data = new FormData(form);
+  const lines = [
+    "HIGH ROAD - Tawang Enquiry",
+    "",
+    `Name: ${data.get("name") || ""}`,
+    `Phone / WhatsApp: ${data.get("phone") || ""}`,
+    `Travel date: ${data.get("date") || "Flexible"}`,
+    `Travellers: ${data.get("travellers") || "Not specified"}`,
+    `Travel style: ${data.get("style") || "Not specified"}`,
+    `Message: ${data.get("message") || "No additional message"}`
+  ];
+  return lines.join("\n");
+}
+
+const tawangForm = document.getElementById("tawang-form");
+if(tawangForm){
+  tawangForm.addEventListener("submit", function(e){
+    e.preventDefault();
+    const message = buildTawangWhatsAppMessage(tawangForm);
+    const status = document.getElementById("tawang-message");
+    if(!HIGH_ROAD_WHATSAPP){
+      status.textContent = "Add HIGH_ROAD_WHATSAPP in script.js to activate direct WhatsApp enquiries.";
+      status.style.color = "#12355B";
+      return;
+    }
+    window.open(`https://wa.me/${HIGH_ROAD_WHATSAPP}?text=${encodeURIComponent(message)}`, "_blank");
+    status.textContent = "Opening WhatsApp…";
+  });
+}
+
+document.querySelectorAll('[data-trip]').forEach(function(button){
+  button.addEventListener('click', function(){
+    const style = document.querySelector('#tawang-form select[name="style"]');
+    const message = document.querySelector('#tawang-form textarea[name="message"]');
+    if(style && !style.value) style.value = "Road trip";
+    if(message) message.value = `I'm interested in: ${button.dataset.trip}`;
+  });
+});

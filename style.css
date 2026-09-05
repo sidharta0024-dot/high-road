@@ -41,3 +41,80 @@ footer{background:#12355B;color:white;padding:35px 5%;display:flex;justify-conte
 .smart-v4{padding-top:100px;padding-bottom:100px}.smart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.smart-grid article{background:#fff;padding:32px;border-radius:16px;border-left:6px solid #FFC857}.smart-grid article span{font-family:Oswald;color:#FF6B35}.smart-grid h3{font-family:Oswald;font-size:30px;margin:8px 0}.smart-grid p{line-height:1.65;margin:0}.official-note{margin-top:20px;font-size:11px;font-weight:800;letter-spacing:1px;opacity:.6}
 .tawang-plan-v4{padding-top:100px;padding-bottom:100px}.tawang-end-v4{background:#12355B;color:#FFF8ED}
 @media(max-width:760px){.tawang-hero-v4{min-height:700px}.tawang-hero-content{padding:70px 6% 55px}.tawang-hero-content h1{font-size:94px}.hero-kicker{font-size:27px}.hero-stamp{width:88px;height:88px;right:6%;top:8%}.hero-stamp strong{font-size:28px}.hero-stamp span,.hero-stamp small{font-size:7px}.tawang-intro-v4{grid-template-columns:1fr;gap:20px;padding:75px 6%}.intro-copy h2{font-size:61px}.intro-copy p{font-size:17px}.tawang-stats-v4{grid-template-columns:1fr}.tawang-stats-v4>div{border-right:0;border-bottom:1px solid #fff3;padding:30px 6%}.highlight-grid{grid-template-columns:1fr}.highlight-large{grid-row:auto}.highlight-large .highlight-photo{height:260px}.highlight-photo{height:230px}.route-strip-v4{grid-template-columns:1fr;padding:70px 6%;gap:30px}.route-line{line-height:1.8}.route-note{grid-column:auto}.smart-grid{grid-template-columns:1fr}.tawang-experiences-v4,.smart-v4{padding-top:75px;padding-bottom:75px}}
+
+
+/* ==============================
+   HIGH ROAD V5 TAWANG UPGRADE
+   ============================== */
+.v5-tawang .tawang-hero-v4{
+  background-image:linear-gradient(180deg,rgba(18,53,91,.12),rgba(18,53,91,.68)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Road%20approaching%20Sela%20Pass%20in%20Tawang%20Dist%20Arunachal%20Pradesh%201.jpg');
+  background-size:cover;background-position:center;
+}
+.v5-tawang .hero-stamp{background:#ffc857;color:#12355b}
+.v5-tawang .hero-kicker{max-width:720px}
+.v5-photo{background-size:cover;background-position:center;min-height:280px}
+.v5-photo.monastery{background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Tawang%20Monastery%20view.jpg')}
+.v5-photo.sela{background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Sela%20Pass%20%284360286595%29.jpg')}
+.v5-photo.nuranang{background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Nuranang%20Falls.jpg')}
+.v5-photo.bumla{background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Mountain%20range%20near%20Bum%20La%20Pass%2C%20Tawang%2C%20Arunachal%20Pradesh%2C%20India.jpg')}
+.v5-photo.madhuri{background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Covered%20with%20Ice.jpg')}
+.v5-visual-intro{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:stretch}
+.v5-visual-intro .v5-intro-image{min-height:520px;background:url('https://commons.wikimedia.org/wiki/Special:FilePath/Tawang%20Monastery%20view.jpg') center/cover}
+.v5-intro-panel{padding:54px 0}
+.v5-intro-panel h2{font-family:Oswald,sans-serif;font-size:clamp(3rem,7vw,6rem);line-height:.9;margin:0 0 28px;color:#12355b}
+.v5-intro-panel p{font-size:1.08rem;line-height:1.75;max-width:650px}
+.v5-factbar{display:grid;grid-template-columns:repeat(3,1fr);background:#12355b;color:#fff8ed}
+.v5-factbar article{padding:34px;border-right:1px solid rgba(255,255,255,.2)}
+.v5-factbar article:last-child{border-right:0}
+.v5-factbar span{display:block;font-size:.75rem;letter-spacing:.2em;font-weight:800;opacity:.72;margin-bottom:10px}
+.v5-factbar strong{display:block;font-family:Oswald,sans-serif;font-size:2rem;line-height:1}
+.v5-factbar small{display:block;margin-top:8px;opacity:.8}
+.v5-places{display:grid;grid-template-columns:1.35fr .65fr;gap:18px}
+.v5-place-card{position:relative;overflow:hidden;min-height:420px;border-radius:22px;background:#12355b;color:#fff}
+.v5-place-card.small{min-height:300px}
+.v5-place-card .v5-photo{position:absolute;inset:0;min-height:0;transition:transform .5s}
+.v5-place-card:hover .v5-photo{transform:scale(1.04)}
+.v5-place-card .place-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(0,0,0,.78));z-index:1}
+.v5-place-card .place-content{position:absolute;left:28px;right:28px;bottom:28px;z-index:2}
+.v5-place-card .place-content span{font-weight:800;letter-spacing:.18em;font-size:.72rem}
+.v5-place-card h3{font-family:Oswald,sans-serif;font-size:clamp(2rem,5vw,3.5rem);margin:8px 0 8px}
+.v5-place-card p{margin:0;line-height:1.5;max-width:560px}
+.v5-season{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.v5-season article{background:#fff;border:1px solid rgba(18,53,91,.12);border-radius:18px;padding:24px}
+.v5-season article.current{background:#ffc857;border-color:#ffc857}
+.v5-season strong{font-family:Oswald,sans-serif;font-size:1.7rem;display:block;color:#12355b}
+.v5-season span{font-weight:800;font-size:.76rem;letter-spacing:.14em;color:#12355b}
+.v5-season p{line-height:1.6}
+.v5-trip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.v5-trip{background:#fff;border:1px solid rgba(18,53,91,.13);padding:28px;border-radius:20px;display:flex;flex-direction:column;min-height:320px}
+.v5-trip .trip-number{font-size:.75rem;letter-spacing:.18em;font-weight:800;color:#ff6b35}
+.v5-trip h3{font-family:Oswald,sans-serif;font-size:2rem;color:#12355b;margin:12px 0 8px}
+.v5-trip p{line-height:1.6;flex:1}
+.v5-trip ul{padding-left:18px;line-height:1.7}
+.v5-trip .btn{width:100%;text-align:center}
+.v5-route-v5{background:#ff6b35;color:#fff8ed;padding:64px 6vw}
+.v5-route-v5 .route-wrap{max-width:1200px;margin:auto}
+.v5-route-v5 h2{font-family:Oswald,sans-serif;font-size:clamp(3rem,7vw,6rem);line-height:.9;margin:0 0 25px}
+.v5-route-v5 .route-steps{display:flex;gap:0;align-items:center;overflow:auto;padding:16px 0 20px}
+.v5-route-v5 .route-steps span{white-space:nowrap;background:#fff8ed;color:#12355b;padding:14px 18px;font-weight:800;border-radius:999px}
+.v5-route-v5 .route-steps b{padding:0 10px;font-size:1.4rem}
+.v5-safety{background:#fff8ed}
+.v5-safety-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.v5-safety-card{background:#fff;border-left:6px solid #12355b;padding:24px;border-radius:0 16px 16px 0}
+.v5-safety-card h3{margin:0 0 8px;color:#12355b;font-size:1.15rem}
+.v5-safety-card p{margin:0;line-height:1.65}
+.v5-form-note{font-size:.86rem;opacity:.78;margin-top:10px}
+.v5-credits{font-size:.72rem;line-height:1.5;opacity:.68;padding:25px 6vw;border-top:1px solid rgba(18,53,91,.12)}
+.v5-credits a{color:inherit}
+@media(max-width:760px){
+  .v5-visual-intro{grid-template-columns:1fr;gap:0}
+  .v5-visual-intro .v5-intro-image{min-height:360px;order:-1}
+  .v5-intro-panel{padding:42px 0 20px}
+  .v5-factbar{grid-template-columns:1fr}
+  .v5-factbar article{border-right:0;border-bottom:1px solid rgba(255,255,255,.2)}
+  .v5-factbar article:last-child{border-bottom:0}
+  .v5-places{grid-template-columns:1fr}
+  .v5-place-card,.v5-place-card.small{min-height:320px}
+  .v5-season,.v5-trip-grid,.v5-safety-grid{grid-template-columns:1fr}
+  .v5-route-v5{padding:48px 5vw}
+}
