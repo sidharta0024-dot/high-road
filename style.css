@@ -267,3 +267,37 @@ footer{background:#12355B;color:white;padding:35px 5%;display:flex;justify-conte
   .ziro-page .ziro-intro-panel h2{font-size:48px;}
   .ziro-page .ziro-hero-content .actions .btn{width:100%;}
 }
+
+
+/* HIGH ROAD V8.3: force-visible Ziro destination button */
+.ziro-page .ziro-hero-v8 .actions .ziro-all-destinations{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:auto;
+  min-height:54px;
+  padding:16px 25px !important;
+  background:#FFF8ED !important;
+  color:#12355B !important;
+  border:2px solid #12355B !important;
+  font-size:16px !important;
+  line-height:1.2 !important;
+  font-weight:800 !important;
+  text-decoration:none !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  overflow:visible !important;
+  text-indent:0 !important;
+  letter-spacing:0 !important;
+}
+.ziro-page .ziro-hero-v8 .actions .ziro-all-destinations span{
+  display:block !important;
+  color:#12355B !important;
+  font:inherit !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  white-space:nowrap;
+}
+@media(max-width:760px){
+  .ziro-page .ziro-hero-v8 .actions .ziro-all-destinations{width:100% !important;}
+}
