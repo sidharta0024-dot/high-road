@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan Your Trip | HIGH ROAD</title>
+  <meta name="description" content="Plan a custom Northeast India trip with HIGH ROAD. Tell us your destination, dates, group size and travel style.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=16">
+</head>
+<body class="inner-page">
+<header class="site-header">
+  <a class="brand" href="index.html#home" aria-label="HIGH ROAD home"><span class="brand-mark">⌁</span><span><strong>HIGH ROAD</strong><small>Tours · Custom Trips · Rentals</small></span></a>
+  <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+  <nav class="nav" id="main-nav" aria-label="Main navigation">
+    <a href="index.html#destinations">Destinations</a>
+    <a href="tours.html">Tours</a>
+    <a href="plan.html">Plan Your Trip</a>
+    <a href="rentals.html">Rentals</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a class="nav-cta" href="plan.html">ENQUIRE NOW</a>
+  </nav>
+</header>
+
+<main>
+<section class="plan-hero-v16">
+  <div>
+    <p class="eyebrow orange-text">CUSTOM TRIPS · NORTHEAST INDIA</p>
+    <h1>BUILD THE<br><span>TRIP YOU WANT.</span></h1>
+    <p>Tell us the idea. We'll help shape the route, pace, vehicle and stops around you.</p>
+  </div>
+</section>
+
+<section class="plan-form-section-v16">
+  <div class="plan-form-intro-v16">
+    <p class="eyebrow orange-text">START HERE</p>
+    <h2>LET'S PLAN<br>SOMETHING GOOD.</h2>
+    <p>Whether you have a route in mind or only know that you want to get out there, send us the basics. We'll take it from there.</p>
+    <div class="plan-steps-v16">
+      <div><strong>01</strong><span>Tell us where</span></div>
+      <div><strong>02</strong><span>Tell us when</span></div>
+      <div><strong>03</strong><span>We'll shape the road</span></div>
+    </div>
+  </div>
+
+  <form id="plan-form" class="form plan-form-v16">
+    <label>Your name<input required name="name" placeholder="Your name" autocomplete="name"></label>
+    <label>Phone / WhatsApp<input required name="phone" placeholder="10-digit number" inputmode="tel" autocomplete="tel"></label>
+    <label>Destination<select required name="destination">
+      <option value="">Choose a destination</option>
+      <option>Tawang</option><option>Ziro</option><option>Mechuka</option><option>Anini</option><option>Dong</option><option>Bomdila</option><option>Shillong</option><option>Not sure yet</option>
+    </select></label>
+    <label>Travel date<input type="date" name="date"></label>
+    <label>Travellers<input type="number" min="1" max="50" name="travellers" placeholder="How many people?"></label>
+    <label>Trip style<select name="style">
+      <option value="">Choose a style</option>
+      <option>Adventure</option><option>Family</option><option>Couple</option><option>Nature</option><option>Culture</option><option>Road trip</option><option>Slow escape</option>
+    </select></label>
+    <label class="full">Pickup / starting point<input name="pickup" placeholder="e.g. Guwahati, Dibrugarh, Itanagar"></label>
+    <label class="full">What are you thinking?<textarea name="message" rows="5" placeholder="Tell us your rough plan, must-see places, vehicle preference, budget range or anything else..."></textarea></label>
+    <button class="btn orange full" type="submit">SEND TO HIGH ROAD →</button>
+    <p id="plan-message" class="form-message full" role="status"></p>
+  </form>
+</section>
+
+<section class="plan-note-v16">
+  <p class="eyebrow">A QUICK NOTE</p>
+  <h2>REMOTE ROADS NEED<br>A LITTLE MORE PLANNING.</h2>
+  <p>Some Arunachal routes involve permits, long driving days, changing weather and limited services. We'll help you plan with those realities in mind rather than pretending every mountain road is a two-hour shortcut.</p>
+</section>
+
+<section class="inner-cta">
+  <p class="eyebrow">NOT READY YET?</p>
+  <h2>JUST KNOW YOU WANT<br>TO GO.</h2>
+  <a class="btn dark" href="contact.html">TALK TO HIGH ROAD →</a>
+</section>
+</main>
+
+<footer class="footer"><div><strong>HIGH ROAD</strong><span>Go somewhere worth remembering.</span></div><div>© 2026 HIGH ROAD · Tours · Custom Trips · Rentals</div></footer>
+<script src="script.js?v=16"></script>
+</body>
+</html>

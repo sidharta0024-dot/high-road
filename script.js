@@ -117,3 +117,26 @@ if(contactForm){
     if(status) status.textContent='Opening WhatsApp…';
   });
 }
+
+/* HIGH ROAD V16: dedicated Plan Your Trip form */
+const planForm = document.getElementById('plan-form');
+if(planForm){
+  planForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const data = new FormData(planForm);
+    const lines = [
+      'HIGH ROAD - CUSTOM TRIP ENQUIRY','',
+      `Name: ${data.get('name') || ''}`,
+      `Phone / WhatsApp: ${data.get('phone') || ''}`,
+      `Destination: ${data.get('destination') || 'Not specified'}`,
+      `Travel date: ${data.get('date') || 'Flexible'}`,
+      `Travellers: ${data.get('travellers') || 'Not specified'}`,
+      `Trip style: ${data.get('style') || 'Not specified'}`,
+      `Pickup / starting point: ${data.get('pickup') || 'Not specified'}`,
+      `Message: ${data.get('message') || 'No additional message'}`
+    ];
+    window.open(`https://wa.me/919707635538?text=${encodeURIComponent(lines.join('\n'))}`, '_blank');
+    const status = document.getElementById('plan-message');
+    if(status) status.textContent = 'Opening WhatsApp with your enquiry…';
+  });
+}
