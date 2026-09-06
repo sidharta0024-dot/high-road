@@ -500,5 +500,61 @@ footer{padding-top:28px;padding-bottom:28px}
   .tawang-hero-v4{min-height:500px}
   .tawang-hero-content h1{font-size:68px}
   .cta{padding-top:42px;padding-bottom:42px}
+}/* HIGH ROAD MOBILE COMPACT */
+html,body{overflow-x:hidden}
+
+@media(max-width:760px){
+.site-header{padding:10px 5%!important}
+.brand strong{font-size:23px!important}
+.brand small{font-size:10px!important}
+
+.hero{min-height:500px!important;padding:42px 6%!important}
+.hero h1{font-size:48px!important;line-height:.9!important}
+.hero-text{font-size:17px!important;line-height:1.35!important;margin:14px 0!important}
+
+.section{padding:38px 5%!important}
+.section-heading{margin-bottom:20px!important}
+.section h2{font-size:42px!important}
+
+.destination-grid{gap:10px!important}
+.photo{height:145px!important}
+.destination-body{padding:12px!important;min-height:100px!important}
+.destination h3{font-size:25px!important}
+.destination p{font-size:11px!important}
+
+.service{padding:30px 6%!important;min-height:220px!important}
+.service h2{font-size:34px!important}
+
+.tour-grid,.rental-grid{gap:12px!important}
+.tour-photo{height:175px!important}
+.tour-body{padding:16px!important}
+.tour-body h3,.rental-grid h3{font-size:27px!important}
+
+.rental-grid article{padding:22px!important}
+.rental-grid{grid-template-columns:1fr!important}
+
+.plan{padding:40px 6%!important;gap:28px!important}
+.about{padding:42px 7%!important}
+.about-points{gap:18px!important;margin-top:28px!important}
+.cta{padding:48px 5%!important}
+footer{padding:28px 5%!important;gap:18px!important}
+
+.form{gap:9px!important}
+.form input,.form select,.form textarea{padding:13px!important}
+.form textarea{min-height:85px!important}
 }
+
+@media(max-width:430px){
+.hero{min-height:470px!important}
+.hero h1{font-size:45px!important}
+.btn{padding:14px 18px!important}
+.destination-grid{grid-template-columns:1fr 1fr!important}
+.photo{height:135px!important}
+}
+
+
+
+
+
+
 
