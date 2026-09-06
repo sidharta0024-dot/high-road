@@ -112,8 +112,85 @@ if(contactForm){
       `Travellers: ${data.get('travellers')||'Not specified'}`,
       `Message: ${data.get('message')||''}`
     ];
+    highRoadSaveEnquiry('General contact', Object.fromEntries(data.entries()));
     window.open(`https://wa.me/919707635538?text=${encodeURIComponent(lines.join('\n'))}`, '_blank');
     const status=document.getElementById('contact-message');
     if(status) status.textContent='Opening WhatsApp…';
+  });
+}
+
+
+/* HIGH ROAD V21: lightweight local enquiry tracker
+   Saves enquiries on this browser/device only. No customer data is sent to a server. */
+function highRoadSaveEnquiry(type, data){
+  try{
+    const key='highRoadEnquiries';
+    const existing=JSON.parse(localStorage.getItem(key)||'[]');
+    existing.unshift({
+      id:'HR-'+Date.now().toString(36).toUpperCase(),
+      createdAt:new Date().toISOString(),
+      type:type,
+      status:'New',
+      ...data
+    });
+    localStorage.setItem(key, JSON.stringify(existing.slice(0,200)));
+  }catch(err){ console.warn('HIGH ROAD enquiry tracker unavailable',err); }
+}
+
+/* HIGH ROAD V16: dedicated Plan Your Trip form */
+const planForm = document.getElementById('plan-form');
+if(planForm){
+  planForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const data = new FormData(planForm);
+    const lines = [
+      'HIGH ROAD - CUSTOM TRIP ENQUIRY','',
+      `Name: ${data.get('name') || ''}`,
+      `Phone / WhatsApp: ${data.get('phone') || ''}`,
+      `Destination: ${data.get('destination') || 'Not specified'}`,
+      `Travel date: ${data.get('date') || 'Flexible'}`,
+      `Travellers: ${data.get('travellers') || 'Not specified'}`,
+      `Trip style: ${data.get('style') || 'Not specified'}`,
+      `Pickup / starting point: ${data.get('pickup') || 'Not specified'}`,
+      `Message: ${data.get('message') || 'No additional message'}`
+    ];
+    highRoadSaveEnquiry('Custom trip', Object.fromEntries(data.entries()));
+    window.open(`https://wa.me/919707635538?text=${encodeURIComponent(lines.join('\n'))}`, '_blank');
+    const status = document.getElementById('plan-message');
+    if(status) status.textContent = 'Opening WhatsApp with your enquiry…';
+  });
+}
+
+
+/* HIGH ROAD V17: rental enquiry -> WhatsApp */
+const rentalFormV17 = document.getElementById('rental-form-v17');
+if(rentalFormV17){
+  document.querySelectorAll('[data-rental-service]').forEach(function(link){
+    link.addEventListener('click', function(){
+      const service = link.getAttribute('data-rental-service');
+      const select = rentalFormV17.querySelector('[name="service"]');
+      if(select) select.value = service;
+    });
+  });
+
+  rentalFormV17.addEventListener('submit', function(e){
+    e.preventDefault();
+    const data = new FormData(rentalFormV17);
+    const lines = [
+      'HIGH ROAD - RENTAL ENQUIRY','',
+      `Name: ${data.get('name') || ''}`,
+      `Phone / WhatsApp: ${data.get('phone') || ''}`,
+      `Rental type: ${data.get('service') || 'Not specified'}`,
+      `Rental date: ${data.get('date') || 'Not specified'}`,
+      `Rental days: ${data.get('days') || 'Not specified'}`,
+      `Pickup: ${data.get('pickup') || 'Not specified'}`,
+      `Drop-off: ${data.get('dropoff') || 'Not specified'}`,
+      `Destination / route: ${data.get('route') || 'Not specified'}`,
+      `Requirements: ${data.get('message') || 'None'}`
+    ];
+    highRoadSaveEnquiry('Rental', Object.fromEntries(data.entries()));
+    window.open(`https://wa.me/919707635538?text=${encodeURIComponent(lines.join('\n'))}`, '_blank');
+    const status = document.getElementById('rental-message-v17');
+    if(status) status.textContent = 'Opening WhatsApp with your rental enquiry…';
   });
 }
