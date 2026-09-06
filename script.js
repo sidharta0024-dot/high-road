@@ -4,12 +4,18 @@ const nav = document.querySelector('.nav');
 function closeMenu(){
   nav?.classList.remove('open');
   menuBtn?.setAttribute('aria-expanded','false');
+  menuBtn?.setAttribute('aria-label','Open menu');
 }
 menuBtn?.addEventListener('click',()=>{
   const open = nav.classList.toggle('open');
   menuBtn.setAttribute('aria-expanded', String(open));
+  menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
 });
 document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',closeMenu));
+document.addEventListener('click', e=>{
+  if(nav?.classList.contains('open') && !nav.contains(e.target) && !menuBtn?.contains(e.target)) closeMenu();
+});
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeMenu(); });
 
 document.querySelectorAll('[data-destination]').forEach(card=>{
   card.addEventListener('click',()=>{
@@ -86,3 +92,28 @@ document.querySelectorAll('[data-trip]').forEach(function(button){
     if(message) message.value = `I'm interested in: ${button.dataset.trip}`;
   });
 });
+
+
+const contactForm = document.getElementById('contact-form');
+if(contactForm){
+  const params = new URLSearchParams(location.search);
+  const service = params.get('service');
+  if(service){ const field = contactForm.querySelector('[name="service"]'); if(field){ for(const option of field.options){ if(option.text === service) field.value = service; } } }
+  contactForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const data = new FormData(contactForm);
+    const lines = [
+      'HIGH ROAD ENQUIRY','',
+      `Name: ${data.get('name')||''}`,
+      `Phone / WhatsApp: ${data.get('phone')||''}`,
+      `Service: ${data.get('service')||'Not specified'}`,
+      `Destination: ${data.get('destination')||'Not specified'}`,
+      `Date: ${data.get('date')||'Flexible'}`,
+      `Travellers: ${data.get('travellers')||'Not specified'}`,
+      `Message: ${data.get('message')||''}`
+    ];
+    window.open(`https://wa.me/919707635538?text=${encodeURIComponent(lines.join('\n'))}`, '_blank');
+    const status=document.getElementById('contact-message');
+    if(status) status.textContent='Opening WhatsApp…';
+  });
+}
