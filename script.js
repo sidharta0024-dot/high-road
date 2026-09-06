@@ -112,13 +112,59 @@ if(contactForm){
       `Travellers: ${data.get('travellers')||'Not specified'}`,
       `Message: ${data.get('message')||''}`
     ];
-    highRoadSaveEnquiry('General contact', Object.fromEntries(data.entries()));
+    highRoadSaveBoth('General contact', Object.fromEntries(data.entries()));
     window.open(`https://wa.me/919707635538?text=${encodeURIComponent(lines.join('\n'))}`, '_blank');
     const status=document.getElementById('contact-message');
     if(status) status.textContent='Opening WhatsApp…';
   });
 }
 
+
+
+/* HIGH ROAD V22: Supabase cloud enquiry storage */
+const HIGH_ROAD_SUPABASE_URL = "https://hmejfyqhmzcfzxyqgtgb.supabase.co";
+const HIGH_ROAD_SUPABASE_KEY = "sb_publishable_-rZkKhu7NTHn0F7saPFv_w_zju1Epte";
+let highRoadSupabase = null;
+
+function highRoadInitSupabase(){
+  if(window.supabase && !highRoadSupabase){
+    highRoadSupabase = window.supabase.createClient(HIGH_ROAD_SUPABASE_URL, HIGH_ROAD_SUPABASE_KEY);
+  }
+  return highRoadSupabase;
+}
+
+async function highRoadSaveCloudEnquiry(type, data){
+  try{
+    const client = highRoadInitSupabase();
+    if(!client) return false;
+    const row = {
+      type: type === 'Custom trip' ? 'custom_trip' : type === 'Rental' ? 'rental' : 'contact',
+      name: data.name || 'Not specified',
+      phone: data.phone || '',
+      destination: data.destination || '',
+      travel_date: data.date || null,
+      travellers: data.travellers ? Number(data.travellers) : null,
+      trip_style: data.style || '',
+      rental_type: data.service || '',
+      rental_days: data.days ? Number(data.days) : null,
+      pickup: data.pickup || '',
+      dropoff: data.dropoff || '',
+      route: data.route || '',
+      requirements: data.message || ''
+    };
+    const { error } = await client.from('enquiries').insert(row);
+    if(error){ console.warn('HIGH ROAD cloud enquiry failed', error); return false; }
+    return true;
+  }catch(err){
+    console.warn('HIGH ROAD cloud enquiry unavailable', err);
+    return false;
+  }
+}
+
+function highRoadSaveBoth(type, data){
+  highRoadSaveEnquiry(type, data);
+  highRoadSaveCloudEnquiry(type, data);
+}
 
 /* HIGH ROAD V21: lightweight local enquiry tracker
    Saves enquiries on this browser/device only. No customer data is sent to a server. */
@@ -154,7 +200,7 @@ if(planForm){
       `Pickup / starting point: ${data.get('pickup') || 'Not specified'}`,
       `Message: ${data.get('message') || 'No additional message'}`
     ];
-    highRoadSaveEnquiry('Custom trip', Object.fromEntries(data.entries()));
+    highRoadSaveBoth('Custom trip', Object.fromEntries(data.entries()));
     window.open(`https://wa.me/919707635538?text=${encodeURIComponent(lines.join('\n'))}`, '_blank');
     const status = document.getElementById('plan-message');
     if(status) status.textContent = 'Opening WhatsApp with your enquiry…';
@@ -188,7 +234,7 @@ if(rentalFormV17){
       `Destination / route: ${data.get('route') || 'Not specified'}`,
       `Requirements: ${data.get('message') || 'None'}`
     ];
-    highRoadSaveEnquiry('Rental', Object.fromEntries(data.entries()));
+    highRoadSaveBoth('Rental', Object.fromEntries(data.entries()));
     window.open(`https://wa.me/919707635538?text=${encodeURIComponent(lines.join('\n'))}`, '_blank');
     const status = document.getElementById('rental-message-v17');
     if(status) status.textContent = 'Opening WhatsApp with your rental enquiry…';
